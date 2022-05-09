@@ -6,7 +6,7 @@
 
 Exercícios realizados durante o Bootcamp Dev. Mobile (Turma 3) - Generation Brasil.
 
-- [x] Protugol
+- [x] Portugol
 - [x] Git e GitHub
 - [ ] Kotlin
   
