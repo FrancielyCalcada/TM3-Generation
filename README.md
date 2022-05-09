@@ -2,4 +2,4 @@
 
 # TM3-Generation
 
-<center>Exercícios realizados durante o Bootcamp Dev. Mobile (Turma 3) - Generation Brasil</center>
+Exercícios realizados durante o Bootcamp Dev. Mobile (Turma 3) - Generation Brasil
