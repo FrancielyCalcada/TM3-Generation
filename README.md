@@ -9,5 +9,5 @@ Exercícios realizados durante o Bootcamp Dev. Mobile (Turma 3) - Generation Bra
 - [x] Portugol
 - [x] Git e GitHub
 - [x] Kotlin
-- [x] Android
+- [ ] Android
   
