@@ -1,11 +1,12 @@
 package com.generation.gerenciadordetarefas.model
 
 data class Tarefa (
-    var nome: String,
-    var descricao: String,
-    var responsavel: String,
-    var data: String,
-    var status: Boolean,
-    var categoria: String
+    val id: Long,
+    val nome: String,
+    val descricao: String,
+    val responsavel: String,
+    val data: String,
+    val status: Boolean,
+    val categoria: Categoria
         ){
     }
