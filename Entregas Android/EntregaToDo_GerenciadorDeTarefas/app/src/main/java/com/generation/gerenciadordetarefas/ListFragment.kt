@@ -5,13 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generation.gerenciadordetarefas.adapter.TarefaAdapter
 import com.generation.gerenciadordetarefas.databinding.FragmentListBinding
-import com.generation.gerenciadordetarefas.model.Tarefa
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListFragment : Fragment() {
 

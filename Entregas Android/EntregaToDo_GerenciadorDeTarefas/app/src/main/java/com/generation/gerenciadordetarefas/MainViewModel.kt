@@ -10,20 +10,24 @@ import com.generation.gerenciadordetarefas.model.Categoria
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import java.lang.Exception
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository
-        ) : ViewModel() {
+        ): ViewModel() {
 
-    private var _myCategoriaResponse = MutableLiveData<Response<List<Categoria>>>()
+    private val _myCategoriaResponse =
+        MutableLiveData<Response<List<Categoria>>>()
 
-    val myCategoriaResponse: LiveData<Response<List<Categoria>>> = _myCategoriaResponse
+    val myCategoriaResponse : LiveData<Response<List<Categoria>>> =
+        _myCategoriaResponse
+
+    val dataSelecionada = MutableLiveData<LocalDate>()
 
     init {
-        listCategoria()
+        //listCategoria()
     }
 
     fun listCategoria(){
@@ -32,8 +36,10 @@ class MainViewModel @Inject constructor(
                 val response = repository.listCategoria()
                 _myCategoriaResponse.value = response
             }catch (e: Exception){
-                Log.d("ErroRequisição", e.message.toString())
+                Log.d("Erro", e.message.toString())
             }
+
         }
     }
+
 }
