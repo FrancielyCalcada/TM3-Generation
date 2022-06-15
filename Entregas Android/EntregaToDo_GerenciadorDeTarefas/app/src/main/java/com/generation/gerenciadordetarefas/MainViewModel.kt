@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.gerenciadordetarefas.api.Repository
 import com.generation.gerenciadordetarefas.model.Categoria
+import com.generation.gerenciadordetarefas.model.Tarefa
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -16,13 +17,18 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository
-        ): ViewModel() {
+): ViewModel(){
 
-    private val _myCategoriaResponse =
-        MutableLiveData<Response<List<Categoria>>>()
+    private var _myCategoriaResponse = MutableLiveData<Response<List<Categoria>>>()
 
-    val myCategoriaResponse : LiveData<Response<List<Categoria>>> =
+    val myCategoriaResponse: LiveData<Response<List<Categoria>>> =
         _myCategoriaResponse
+
+    private val _myTarefaResponse =
+        MutableLiveData<Response<List<Tarefa>>>()
+
+    val myTarefaResponse: LiveData<Response<List<Tarefa>>> =
+        _myTarefaResponse
 
     val dataSelecionada = MutableLiveData<LocalDate>()
 
@@ -36,9 +42,31 @@ class MainViewModel @Inject constructor(
                 val response = repository.listCategoria()
                 _myCategoriaResponse.value = response
             }catch (e: Exception){
+                Log.d("ErroRequisicao", e.message.toString())
+            }
+        }
+    }
+
+    fun addTarefa(tarefa: Tarefa){
+        viewModelScope.launch {
+            try {
+                val response = repository.addTarefa(tarefa)
+                Log.d("Ok", response.body().toString())
+                listTarefa()
+            }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
             }
+        }
+    }
 
+    fun listTarefa(){
+        viewModelScope.launch {
+            try {
+                val response = repository.listTarefa()
+                _myTarefaResponse.value = response
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
         }
     }
 

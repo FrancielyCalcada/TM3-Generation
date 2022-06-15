@@ -8,5 +8,5 @@ data class Tarefa (
     val data: String,
     val status: Boolean,
     val categoria: Categoria
-        ){
-    }
+){
+}

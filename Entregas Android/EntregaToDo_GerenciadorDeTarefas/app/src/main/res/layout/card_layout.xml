@@ -14,17 +14,17 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/txtNome"
+            android:id="@+id/textNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
-            tools:text="Nome da tarefa" />
+            tools:text="Nome da Tarefa" />
 
         <TextView
-            android:id="@+id/txtDescricao"
+            android:id="@+id/textDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -33,7 +33,7 @@
             tools:text="Descrição" />
 
         <TextView
-            android:id="@+id/txtResponsavel"
+            android:id="@+id/textResponsavel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -42,7 +42,7 @@
             tools:text="Responsavel" />
 
         <TextView
-            android:id="@+id/txtData"
+            android:id="@+id/textData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -51,17 +51,16 @@
             tools:text="Data" />
 
         <Switch
-            android:id="@+id/switchAtiva"
+            android:id="@+id/switchAtivo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:minHeight="48dp"
             android:text="Em andamento"
-            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtCategoria"
+            android:id="@+id/textCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -70,10 +69,10 @@
             tools:text="Categoria" />
 
         <Button
-            android:id="@+id/btnDeletar"
+            android:id="@+id/buttonDeletar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="DELETAR TAREFA" />
+            android:text="Deletar Tarefa" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
