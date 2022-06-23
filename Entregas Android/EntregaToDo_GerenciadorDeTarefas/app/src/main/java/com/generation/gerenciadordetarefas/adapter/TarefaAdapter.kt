@@ -3,10 +3,14 @@ package com.generation.gerenciadordetarefas.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.gerenciadordetarefas.MainViewModel
 import com.generation.gerenciadordetarefas.databinding.CardLayoutBinding
 import com.generation.gerenciadordetarefas.model.Tarefa
 
-class TarefaAdapter: RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
+class TarefaAdapter(
+    val taskClickListener: TaskClickListener,
+    val mainViewModel: MainViewModel
+): RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
 
     var listTarefa = emptyList<Tarefa>()
 
@@ -30,6 +34,9 @@ class TarefaAdapter: RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
         holder.binding.switchAtivo.isChecked = tarefa.status
         holder.binding.textCategoria.text = tarefa.categoria.descricao
 
+        holder.itemView.setOnClickListener {
+            taskClickListener.onTaskClickListener(tarefa)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +44,7 @@ class TarefaAdapter: RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
     }
 
     fun setList(list: List<Tarefa>){
-        listTarefa = list
+        listTarefa = list.sortedByDescending { it.id }
         notifyDataSetChanged()
     }
 
