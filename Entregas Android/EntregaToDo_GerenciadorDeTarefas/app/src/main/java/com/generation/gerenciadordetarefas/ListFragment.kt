@@ -28,7 +28,7 @@ class ListFragment : Fragment(), TaskClickListener {
 
         mainViewModel.listTarefa()
 
-        val adapter = TarefaAdapter(this, mainViewModel)
+        val adapter = TarefaAdapter(this, mainViewModel, requireContext())
 
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
